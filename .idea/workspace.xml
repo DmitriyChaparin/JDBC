@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3747ac25-8cd1-4c51-9399-7e2e6134ddf8" name="Changes" comment="first">
+    <list default="true" id="3747ac25-8cd1-4c51-9399-7e2e6134ddf8" name="Changes" comment="Изменения обьектов в базе данных">
+      <change afterPath="$PROJECT_DIR$/src/main/java/connection/HibernateSessionFactoryUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/connection/ApplicationConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/ApplicationConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/employeeDao/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/employeeDao/EmployeeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/employeeDao/EmployeeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/employeeDao/EmployeeDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Employee.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +25,14 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Tag Library Descriptor" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Homework" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,11 +63,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/diman/IdeaProjects/JDBC",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
@@ -73,6 +80,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dao.employeeDao" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
@@ -96,7 +108,10 @@
       <option name="presentableId" value="Default" />
       <updated>1680191159613</updated>
       <workItem from="1680191160868" duration="1613000" />
-      <workItem from="1680270947380" duration="8750000" />
+      <workItem from="1680270947380" duration="9303000" />
+      <workItem from="1680424169840" duration="3025000" />
+      <workItem from="1680538693819" duration="2853000" />
+      <workItem from="1680610535407" duration="8375000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1680275655944</created>
@@ -105,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680275655945</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Изменения обьектов в базе данных">
+      <created>1680279887043</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680279887043</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +135,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
-    <option name="LAST_COMMIT_MESSAGE" value="first" />
+    <MESSAGE value="Изменения обьектов в базе данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменения обьектов в базе данных" />
   </component>
 </project>

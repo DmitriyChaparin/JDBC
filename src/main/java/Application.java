@@ -1,28 +1,62 @@
+import dao.cityDao.CityDAO;
+import dao.cityDao.CityDAOImpl;
 import dao.employeeDao.EmployeeDAO;
 import dao.employeeDao.EmployeeDAOImpl;
+import models.City;
 import models.Employee;
 
-import java.util.List;
-
 public class Application {
-
     private static final EmployeeDAO employeeDao = new EmployeeDAOImpl();
+    private static final CityDAO cityDao = new CityDAOImpl();
+
+    static void createCity(City city) {
+        cityDao.addNewCity(city);
+    }
+
+    static void findCityById(Integer id) {
+        System.out.println(cityDao.findById(id));
+    }
+
+    static void updateCity(City city) {
+        cityDao.updateCity(city);
+    }
+
+    static void deleteCity(City city) {
+        cityDao.deleteCityById(city);
+    }
+
+    static void createEmployee(Employee employee) {
+        employeeDao.addNewEmployee(employee);
+    }
+
+    static void findEmployeeById(Integer id) {
+        System.out.println(employeeDao.findById(id));
+    }
+
+    static void updateEmployee(Employee employee) {
+        employeeDao.updateEmployee(employee);
+    }
+
+    static void deleteEmployee(Employee employee) {
+       employeeDao.deleteEmployeeById(employee);
+    }
+
+    static void printAllEmployees() {
+        for (Employee employee : employeeDao.allEmployees()) {
+            System.out.println(employee);
+        }
+    }
 
     public static void main(String[] args) {
-
-        Employee employee1 = new Employee("Gera", "Gerasimov", "Man", 33, 2);
-        employeeDao.addNewEmployee(employee1); //Добавление нового работника
-
-        System.out.println(employeeDao.findById(19));//Поиск работника по Id
-
-        Employee employeeDelete = new Employee(25, "Peter", "Pen", "Man", 8, 1);
-        employeeDao.deleteEmployeeById(employeeDelete); //удаление работника по Id;
-
-        Employee employeeUpdate = new Employee(24, "Peter", "Pen", "Man", 7, 1);
-        employeeDao.updateEmployee(employeeUpdate); //обновление  данных работника;
-
-        List<Employee> list = employeeDao.allEmployees();// список всех работников;
-        System.out.println(list);
+        findCityById(2);
+        createCity(new City("Saratov"));
+        updateCity(new City(5, "New York"));
+        deleteCity(new City(7));
+        findEmployeeById(1);
+        createEmployee(new Employee("Fred", "Fedotov", "Man", 28, (new City(1))));
+        updateEmployee(new Employee(28, "Fred", "Fedotov", "Man", 28, (new City(2))));
+        deleteEmployee(new Employee(28));
+        printAllEmployees();
     }
 }
 

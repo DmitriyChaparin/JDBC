@@ -4,14 +4,21 @@ import connection.HibernateSessionFactoryUtil;
 import models.Employee;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
+import Exception.NotInDatabaseException;
 import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 
+
+
     @Override
     public Employee findById(Integer id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Employee.class, id);
+        Employee employee = HibernateSessionFactoryUtil.getSessionFactory().openSession()
+               .get(Employee.class, id);
+        if (employee == null) {
+            throw new NotInDatabaseException("Работинк не найден");
+        } else
+            return employee;
     }
 
     @Override

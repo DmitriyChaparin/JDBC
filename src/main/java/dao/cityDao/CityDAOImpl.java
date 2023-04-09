@@ -1,29 +1,49 @@
 package dao.cityDao;
 
-import connection.ApplicationConnection;
+import connection.HibernateSessionFactoryUtil;
 import models.City;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import Exception.NotInDatabaseException;
 
 public class CityDAOImpl implements CityDAO {
 
-    private final ApplicationConnection applicationConnection = new ApplicationConnection();
 
     @Override
-    public City findById(Integer id) throws SQLException {
-        try (PreparedStatement statement =
-                     applicationConnection.getPreparedStatement
-                             ("SELECT * FROM city WHERE city_id=(?)")) {
-            statement.setInt(1, id);
-            statement.executeQuery();
+    public City findById(Integer id) {
+        City city = HibernateSessionFactoryUtil.getSessionFactory().openSession()
+                .get(City.class, id);
+        if (city == null) {
+            throw new NotInDatabaseException("Город не найден в базе данных");
+        }
+        return city;
+    }
 
-            ResultSet resultSet = statement.getResultSet();
-            resultSet.next();
+    @Override
+    public void addNewCity(City city) {
+        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.save(city);
+            transaction.commit();
+        }
+    }
 
-            return new City(resultSet.getString("city_name"));
+    @Override
+    public void updateCity(City city) {
+        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.update(city);
+            transaction.commit();
 
+        }
+    }
+
+    @Override
+    public void deleteCityById(City city) {
+        try (Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+            session.delete(city);
+            transaction.commit();
         }
     }
 }
